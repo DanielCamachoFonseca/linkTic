@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "17beba04-573b-4a4b-8ce7-dd0de5d5e75b",
+		"name": "LinkTic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11241801",
+		"_collection_link": "https://restless-spaceship-597769.postman.co/workspace/procesos~fa2ae981-01ff-4df5-8766-47b37ce9ccb4/collection/11241801-17beba04-573b-4a4b-8ce7-dd0de5d5e75b?action=share&source=collection_link&creator=11241801"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Obtiene productos por id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "LINKTIC_SECRET_123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/product/findProductById/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"findProductById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualiza productos",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "LINKTIC_SECRET_123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"BMW SERIE 2\",\r\n  \"price\": 245000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/product/update/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"update",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar productos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "LINKTIC_SECRET_123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Mazda 3\",\r\n  \"price\": 1245671\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/product/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtiene todos los productos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "LINKTIC_SECRET_123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/product/findAll?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"findAll"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventarios",
+			"item": [
+				{
+					"name": "Actualiza cantidad disponible de un producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/inventory/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"inventory",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compra de productos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1,\r\n  \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/inventory/purchase",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"inventory",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtiene cantidad disponible de un producto por id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/inventory/getInventoryByProductId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"inventory",
+								"getInventoryByProductId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
