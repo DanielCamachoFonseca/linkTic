@@ -47,6 +47,12 @@ Foot print de arquitectura
 
 ![Diagrama de arquitectura](docs/diagrama_arquitectura.png)
 
+Diagrama de Despliegue
+
+![Diagrama de arquitectura](docs/diagrama_despliegue.png)
+
+
+
 
 La solución implementa una **arquitectura distribuida** basada en **microservicios**, diseñada para gestionar de forma independiente la información de **productos** y **inventarios**.
 
@@ -102,6 +108,11 @@ Durante el desarrollo del sistema se tomaron diversas decisiones técnicas con e
 
 
 ## ↪️ Explicación del Flujo de Compra Implementado
+
+Diagrama de secuencia
+
+![Diagrama de secuencia](docs/diagrama_secuencia.png)
+
 
 El flujo de compra se implementó en el microservicio **Inventarios**, ya que este es el encargado de manejar la gestión de stock y disponibilidad de productos.  
 El proceso sigue los siguientes pasos:
